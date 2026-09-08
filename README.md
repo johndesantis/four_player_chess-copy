@@ -1,6 +1,8 @@
 **Four Kings** — Four-Player Chess Royale
 
-A polished browser-based four-player chess variant with multi-king support, bots, hot-seat multiplayer, custom army editor, clocks, and special house rules.
+<img width="2048" height="2048" alt="image" src="https://github.com/user-attachments/assets/ff86c862-fc6d-4c2f-a2b4-8f3184eb702c" />
+
+A highly polished, browser-based four-player chess variant with multi-king support, advanced bots, hot-seat multiplayer, custom army editor, clocks, and special house rules.
 
 **Live demo:** [https://fourplayerchess.vercel.app](https://fourplayerchess.vercel.app)
 
@@ -19,7 +21,7 @@ Players (or bots) take turns in clockwise order. The last surviving player wins.
 
 ### Key Features
 
-- **Multi-king variant** — Place 0–many kings per army. Any king loss wipes the whole team.
+- **Multi-king variant** — Place as many kings per army. Any king loss wipes the whole team.
 - **Hot-seat multiplayer** + **bots** — Play 4 humans, mix humans/bots, or pure Bot Royale (spectate).
 - **Bot difficulties** — Casual (random legal moves) or Sharp (prefers captures).
 - **Game clocks** — Optional per-player clocks (1–15+ min or custom). Flag fall eliminates the player.
