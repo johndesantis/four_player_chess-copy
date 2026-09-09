@@ -130,17 +130,17 @@ Apache License 2.0 — see [LICENSE](LICENSE).
 
 ---
 
+### Code of Conduct / Submission Guidelines
+
+You are highly welcome to submit your code requests (including full AI-generated or AI-assisted code is accepted) - but please remember to rigorously test your website before submitting a Pull Request (PR) to the main repo!
+
+---
+
 ### Credits / Notes
 
 Inspired by classic four-player chess variants (especially the modern free-for-all style popularized on platforms like Chess.com) with a unique multi-king twist and “claim the spoils” mechanic.
 
-Built as a fun, self-contained web experience. Contributions, bug reports, and stronger bots welcome!
-
----
-
-### Code of Conduct / Submission Guidelines
-
-You are highly welcome to submit your code requests (including full AI-generated or AI-assisted code is accepted) - but please remember to rigorously test your website before submitting a Pull Request (PR) to the main repo!
+Originally built as a fun, self-contained web experience. Contributions, bug reports, and stronger bots welcome!
 
 ---
 
