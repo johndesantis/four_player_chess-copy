@@ -1,0 +1,55 @@
+name: NodeJS with Webpack
+
+on:
+  push:
+    branches: [ "**" ]        # runs on every branch in a fork
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20.x, 22.x, 24.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint (skip if no lint script)
+        run: npm run lint --if-present
+
+      - name: Build with Webpack
+        run: npx webpack --mode production
+
+      - name: Run tests (skip if no test script)
+        run: npm test --if-present
+
+      - name: Upload build artifacts
+        if: matrix.node-version == '22.x'
+        uses: actions/upload-artifact@v4
+        with:
+          name: webpack-build
+          path: dist/          # change if your webpack output.path differs
+          if-no-files-found: ignore
+          retention-days: 7
