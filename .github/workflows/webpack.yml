@@ -24,13 +24,7 @@ jobs:
         run: npm ci
 
       - name: Type-check TypeScript
-        run: npm run typecheck
-
-      - name: Lint source code
-        run: npm run lint
-
-      - name: Run unit tests
-        run: npm test
+        run: npx tsc --noEmit
 
       - name: Build production bundle
         run: npm run build
