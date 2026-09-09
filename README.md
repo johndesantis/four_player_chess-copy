@@ -138,4 +138,10 @@ Built as a fun, self-contained web experience. Contributions, bug reports, and s
 
 ---
 
+### Code of Conduct / Submission Guidelines
+
+You are highly welcome to submit your code requests (including full AI-generated or AI-assisted code is accepted) - but please remember to rigorously test your website before submitting a Pull Request (PR) to the main repo!
+
+---
+
 **Enjoy the chaos of four crowns.** 👑⚔️
