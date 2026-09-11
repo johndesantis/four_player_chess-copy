@@ -3,15 +3,24 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { defaultSettings, type Settings } from './game/settings';
 import { MenuScreen } from './components/MenuScreen';
-import { EditorScreen } from './components/EditorScreen';
-import { GameScreen } from './components/GameScreen';
+// FIX: default exports — not named
+import EditorScreen from './components/EditorScreen';
+import GameScreen from './components/GameScreen';
 
 type Screen = 'menu' | 'editor' | 'game';
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>('menu');
   const [session, setSession] = useState(0);
-  const [settings, setSettings] = useState<Settings>(defaultSettings);
+  // If defaultSettings is a function in settings.ts, call it:
+  const [settings, setSettings] = useState<Settings>(() =>
+    typeof defaultSettings === 'function'
+      ? (defaultSettings as () => Settings)()
+      : (defaultSettings as Settings),
+  );
+  // Prefer the simple form once settings.ts is cleaned up:
+  // const [settings, setSettings] = useState<Settings>(defaultSettings);        // const object
+  // const [settings, setSettings] = useState<Settings>(() => defaultSettings()); // factory fn
 
   return (
     <div className="min-h-screen bg-[#07080c] text-slate-100 selection:bg-amber-300/30">
