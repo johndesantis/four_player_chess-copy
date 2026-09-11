@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { defaultSettings, type Settings } from './game/settings';
-import MenuScreen from './components/MenuScreen';
-import EditorScreen from './components/EditorScreen';
-import GameScreen from './components/GameScreen';
+import { MenuScreen } from './components/MenuScreen';
+import { EditorScreen } from './components/EditorScreen';
+import { GameScreen } from './components/GameScreen';
 
 type Screen = 'menu' | 'editor' | 'game';
 
