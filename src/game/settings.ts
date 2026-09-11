@@ -1,8 +1,6 @@
 // src/game/settings.ts
 import type { Board, PieceType } from './engine';
 
-export const defaultSettings: Settings = { /* ...values matching every required field... */ };
-
 export interface ArmySetup {
   board: Board;
   nextId: number;
@@ -140,19 +138,18 @@ export const TEAM_PRESETS: { label: string; detail: string; teams: (0 | 1)[] }[]
   { label: '3 v 1 · Amber', detail: 'Red, Blue, Green vs Amber', teams: [0, 0, 1, 0] },
 ];
 
-export function defaultSettings(): Settings {
-  return {
-    seats: defaultSeats(),
-    timeSec: 300,
-    commandeer: true,
-    kingHunt: false,
-    setup: null,
-    mode: 'ffa',
-    winCondition: 'classic',
-    scoring: { ...DEFAULT_SCORING },
-    pointsToWin: 0,
-  };
-}
+// ✅ Single named export — object value (matches App.tsx useState)
+export const defaultSettings: Settings = {
+  seats: defaultSeats(),
+  timeSec: 300,
+  commandeer: true,
+  kingHunt: false,
+  setup: null,
+  mode: 'ffa',
+  winCondition: 'classic',
+  scoring: { ...DEFAULT_SCORING },
+  pointsToWin: 0,
+};
 
 /** Team index per seat for the active mode (FFA => every seat is its own team). */
 export function teamsOf(settings: Settings): number[] {
